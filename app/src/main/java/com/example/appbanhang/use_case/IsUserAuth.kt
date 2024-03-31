@@ -4,7 +4,7 @@ import com.example.appbanhang.repository.AuthReponsitory
 import javax.inject.Inject
 
 class IsUserAuth @Inject constructor(
-    private val responsitory: AuthReponsitory
+    private val repository: AuthReponsitory
 ) {
-    operator fun invoke()= responsitory.isUserAuthFireBase()
+    operator fun invoke()= repository.isUserAuthFireBase()
 }

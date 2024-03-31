@@ -4,7 +4,7 @@ import com.example.appbanhang.repository.AuthReponsitory
 import javax.inject.Inject
 
 class FirebaseAuthState @Inject constructor(
-    private val responsitory: AuthReponsitory
+    private val repository: AuthReponsitory
 ) {
-    operator fun invoke()= responsitory.getFirebaseAuthState()
+    operator fun invoke()= repository.getFirebaseAuthState()
 }

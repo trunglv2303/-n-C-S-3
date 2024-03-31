@@ -10,19 +10,25 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 import com.example.appbanhang.ui.theme.AppBanHangTheme
+import com.example.appbanhang.sceens.SplashScreen
+import com.example.appbanhang.sceens.auth.AuthViewModel
 
 class MainActivity : ComponentActivity() {
+    private lateinit var navController: NavController
+    private lateinit var authViewModel: AuthViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             AppBanHangTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    SplashScreen(navController = navController, authViewModel = authViewModel)
                 }
             }
         }
@@ -41,6 +47,5 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     AppBanHangTheme {
-        Greeting("Android")
     }
 }

@@ -71,4 +71,6 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation ("com.google.dagger:hilt-android:2.38.1")
     implementation("me.tatarka.inject:kotlin-inject-runtime:0.6.3")
+
+    implementation ("androidx.navigation:navigation-compose:2.4.0-alpha10")
 }

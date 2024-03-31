@@ -4,7 +4,7 @@ import com.example.appbanhang.repository.AuthReponsitory
 import javax.inject.Inject
 
 class FirebaseSignIn @Inject constructor(
-    private val responsitory: AuthReponsitory
+    private val repository: AuthReponsitory
 ) {
-    operator fun invoke(email:String,password:String)= responsitory.firebaseSignIn(email,password)
+    operator fun invoke(email:String,password:String)= repository.firebaseSignIn(email,password)
 }

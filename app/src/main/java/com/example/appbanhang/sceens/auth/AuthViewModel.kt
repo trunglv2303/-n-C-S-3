@@ -25,6 +25,7 @@ class AuthViewModel @Inject constructor(
     val signOutState : State<Response<Boolean>> = _signOutState
     private val _firebaseAuthState=mutableStateOf<Boolean>(false)
     val firebaseAuthState : State<Boolean> = _firebaseAuthState
+   // Trạng thái xác định xem người dùng đã được xác thực hay chưa
     fun getFirebaseState()
     {
         viewModelScope.launch {

@@ -17,10 +17,14 @@ class AuthReponsitoryImpl @Inject constructor(
 ): AuthReponsitory
 {
     var  Success : Boolean = false
+        //Kiểm tra xem người dùng có được xác thực bằng Firebase Authentication
+        // hay không
     override fun isUserAuthFireBase(): Boolean {
         return auth.currentUser!=null
     }
-
+    //Trả về một Flow<Boolean> để theo dõi trạng thái xác thực của người dùng Firebase
+    // callbackFlow để tạo một luồng dữ liệu
+    // AuthStateListener để lắng nghe sự kiện thay đổi trạng thái xác thực
     override fun getFirebaseAuthState(): Flow<Boolean>  = callbackFlow {
         val authStateListener=FirebaseAuth.AuthStateListener{
             trySend(auth.currentUser == null)

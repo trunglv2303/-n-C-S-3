@@ -9,7 +9,8 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
-import me.tatarka.inject.annotations.Inject
+import javax.inject.Inject
+
 class AuthReponsitoryImpl @Inject constructor(
     private val auth: FirebaseAuth,
     private val firestore : FirebaseFirestore
